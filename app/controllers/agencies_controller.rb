@@ -19,7 +19,8 @@ class AgenciesController < ApplicationController
     end
     
     private
-        def agency_params.require(:agency_name)
+        def agency_params
+            params.require(:agency).permit(:agency_name)
         end
     
 end
