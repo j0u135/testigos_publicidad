@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   resources :agencies
   resources :formats
   resources :lines
+  resources :pages
 
 end
