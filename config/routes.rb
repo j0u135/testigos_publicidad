@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   resources :formats
   resources :lines
   resources :pages
+  resources :sites
 
 end
