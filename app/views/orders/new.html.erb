@@ -1,0 +1,25 @@
+<h2>Nueva Órden</h2>
+
+<%= form_for [ @order ] do |f| %>
+
+    <label>Número de Órden: </label>
+    <%= f.text_field :order_number %>
+    
+    <label>Campaña: </label>
+    <%= f.text_field :campaign %>
+    
+    <label>Agencia: </label>
+    <%= f.text_field :agency_id %>
+    
+    <label>Fecha Inicio: </label>
+    <%= f.text_field :start_date %>
+    
+    <label>Fecha Fin: </label>
+    <%= f.text_field :end_date %>
+    
+    <label>Sitio: </label>
+    <%= f.text_field :site_id %>
+    
+    <%= f.submit 'Crear' %>
+    
+<% end %>
