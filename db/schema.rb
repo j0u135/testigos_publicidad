@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150802045309) do
+ActiveRecord::Schema.define(version: 20150802050319) do
 
   create_table "agencies", force: :cascade do |t|
     t.string   "agency_name"
@@ -28,6 +28,15 @@ ActiveRecord::Schema.define(version: 20150802045309) do
 
   create_table "formats", force: :cascade do |t|
     t.string   "format_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "lines", force: :cascade do |t|
+    t.integer  "line_number"
+    t.integer  "format_id"
+    t.date     "start_date"
+    t.date     "end_date"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
