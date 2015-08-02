@@ -17,4 +17,9 @@ class CreativesController < ApplicationController
     
     def update
     end
+    
+    private
+        def creative_params
+            params.require(:creative).permit(:creative_name, :order_id)
+        end
 end
