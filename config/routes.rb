@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   resources :creatives
   resources :agencies
   resources :formats
+  resources :lines
 
 end
