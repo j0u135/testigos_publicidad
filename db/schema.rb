@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150801222928) do
+ActiveRecord::Schema.define(version: 20150802040825) do
+
+  create_table "creatives", force: :cascade do |t|
+    t.string   "creative_name"
+    t.integer  "order_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "orders", force: :cascade do |t|
     t.integer  "order_number"
