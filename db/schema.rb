@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150802040825) do
+ActiveRecord::Schema.define(version: 20150802043702) do
+
+  create_table "agencies", force: :cascade do |t|
+    t.string   "agency_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "creatives", force: :cascade do |t|
     t.string   "creative_name"
