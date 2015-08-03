@@ -26,6 +26,11 @@ class OrderTest < ActiveSupport::TestCase
       assert_not @order.valid?
    end
    
+   test 'order_number debe ser de longitud de no mas de 6' do
+      @order.order_number = 4233444434
+      assert_not @order.valid?
+   end
+   
    test 'order_number numérico' do
       @order.order_number = "qwerty"
       assert_not @order.valid?
@@ -54,19 +59,9 @@ class OrderTest < ActiveSupport::TestCase
       assert_not @order.valid?
    end
    
-   test 'start_date debe tener el formato de fecha' do
-      @order.start_date = 'dsdsdd'
-      assert_not @order.valid?
-   end
-   
    #### Pruebas de end_date
    test 'end_date debe estar presente' do
       @order.end_date = ''
-      assert_not @order.valid?
-   end
-   
-   test 'end_date debe tener elf ormato de fecha' do
-      @order.end_date = 'werr444'
       assert_not @order.valid?
    end
    
