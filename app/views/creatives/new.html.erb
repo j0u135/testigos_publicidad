@@ -1,0 +1,12 @@
+<h2>Nuevo Creativo</h2>
+
+<%= render 'shared/errors', obj:@creative %>
+
+<%= form_for [ @order, @creative ] do |f| %>
+
+    <label>Nombre del Creativo: </label>
+    <%= f.text_field :creative_name %>
+
+    <%= f.submit 'Crear' %>
+    
+<% end %>
