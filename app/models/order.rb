@@ -1,4 +1,5 @@
 class Order < ActiveRecord::Base
+    has_many :creatives
     
     validates :order_number, presence: true, numericality: { only_integer: true }, length: { is: 6 }
     validates :campaign, presence: true

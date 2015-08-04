@@ -10,11 +10,18 @@ class OrdersController < ApplicationController
     
     def create
         @order = Order.new(order_params)
-        if @order.save
-            redirect_to orders_path
-        else
-            render :new
-        end
+        #begin
+            if @order.save
+                #flash[:success] = "Se ha generado correctamente la órden."
+                redirect_to orders_path
+            else
+                #flash[:error] = "Lo sentimos, ha ocurrrido un error al generar la órden."
+                render :new
+            end
+        #rescue => e
+            #flash[:error] = "Lo sentimos, ha ocurrrido un error al generar la órden."
+            #logger.error "letter_controller::create => exception"
+        #end
     end
     
     def edit
