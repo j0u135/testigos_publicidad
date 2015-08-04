@@ -1,5 +1,7 @@
 <h2>Nueva Órden</h2>
 
+<%= render 'shared/errors', obj:@order %>
+
 <%= form_for [ @order ] do |f| %>
 
     <label>Número de Órden: </label>
