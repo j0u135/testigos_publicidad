@@ -1,0 +1,23 @@
+<h3>Información Orden: <%= @order.order_number %></h3>
+<ul>
+    <li>
+        <label>Campaña: </label>
+        <%= @order.campaign %>
+    </li>
+    <li>
+        <label>Agencia: </label>
+        <%= @order.agency_id %>
+    </li>
+    <li>
+        <label>Fecha Inicio: </label>
+        <%= @order.start_date %>
+    </li>
+    <li>
+        <label>Fecha Fin: </label>
+        <%= @order.end_date %>
+    </li>
+    <li>
+        <label>Sitio: </label>
+        <%= @order.site_id %>
+    </li>
+</ul>

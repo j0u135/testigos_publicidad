@@ -3,7 +3,7 @@
 <h4>Número de Órden</h4>
 <ul>
     <% @orders.each do |order| %>
-    <li><%= order.order_number %></li>
+    <li><%= link_to order.order_number, order_path(order.id) %></li>
     <% end %>
 </ul>
 
