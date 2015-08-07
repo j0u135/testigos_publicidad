@@ -13,11 +13,12 @@ class CreativesController < ApplicationController
     
     def create
         @order = Order.find(params[:order_id])
+        @creatives = @order.creatives
         @creative = @order.creatives.new(creative_params)
         begin
             if @creative.save
                 flash[:success] = "Se ha agregado correctamente el nuevo creativo."
-                redirect_to order_creatives_path(@order.id)
+                redirect_to new_order_creative_path(@order.id)
             else
                 render :new
             end

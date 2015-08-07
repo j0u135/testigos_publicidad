@@ -1,8 +1,9 @@
+<% if @creatives != nil && @creatives.length > 0 %>
 <h2>Listado de Creativos</h2>
-
 <h4>Nombre del Creativo</h4>
 <ul>
     <% @creatives.each do |creative| %>
     <li><%= creative.creative_name %></li>
     <% end %>
 </ul>
+<% end %>
