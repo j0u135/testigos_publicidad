@@ -7,6 +7,7 @@ class CreativesController < ApplicationController
     
     def new
         @order = Order.find(params[:order_id])
+        @creatives = @order.creatives
         @creative = @order.creatives.new
     end
     

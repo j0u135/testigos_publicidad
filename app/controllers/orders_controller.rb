@@ -13,7 +13,7 @@ class OrdersController < ApplicationController
         #begin
             if @order.save
                 #flash[:success] = "Se ha generado correctamente la órden."
-                redirect_to orders_path
+                redirect_to new_order_creative_path(@order.id)
             else
                 #flash[:error] = "Lo sentimos, ha ocurrrido un error al generar la órden."
                 render :new
