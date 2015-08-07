@@ -3,7 +3,9 @@
 <h4>Nombre del Creativo</h4>
 <ul>
     <% @creatives.each do |creative| %>
-    <li><%= creative.creative_name %></li>
+        <% if !creative.new_record? %>
+            <li><%= creative.creative_name %><span> <%= link_to 'Lineas', new_order_creative_line_path(@order, creative)  %> </span></li>
+        <% end %>
     <% end %>
 </ul>
 <% end %>

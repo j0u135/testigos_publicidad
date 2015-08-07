@@ -8,12 +8,11 @@ class CreativesController < ApplicationController
     def new
         @order = Order.find(params[:order_id])
         @creatives = @order.creatives
-        @creative = @order.creatives.new
+        @creative = @order.creatives.build
     end
     
     def create
         @order = Order.find(params[:order_id])
-        @creatives = @order.creatives
         @creative = @order.creatives.new(creative_params)
         begin
             if @creative.save
@@ -40,6 +39,6 @@ class CreativesController < ApplicationController
     
     private
         def creative_params
-            params.require(:creative).permit(:creative_name, :order_id)
+            params.require(:creative).permit(:creative_name, :order_id, :id)
         end
 end
