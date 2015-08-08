@@ -3,15 +3,9 @@ require 'test_helper'
 class CreativeTest < ActiveSupport::TestCase
    
    def setup
-      @order = Order.new
-      @order.order_number = 234567
-      @order.campaign = "Campaña de Prueba"
-      @order.agency_id = 1
-      @order.start_date = "2015-01-01"
-      @order.end_date = "2015-02-01"
-      @order.site_id = 1
-      @creative = @order.creatives.build()
-      @creative.creative_name = "Algo"
+      @order = setup_order
+      @creative = setup_creative(@order)
+      
    end
    
    test 'Creative debe ser válido' do
