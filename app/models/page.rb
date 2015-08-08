@@ -1,4 +1,4 @@
 class Page < ActiveRecord::Base
-    belongs_to :creatives
-    belongs_to :lines
+    belongs_to :creative
+    belongs_to :line
 end
