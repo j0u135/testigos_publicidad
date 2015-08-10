@@ -16,16 +16,16 @@ class LinesController < ApplicationController
    def create
       @order = Order.find(params[:order_id])
       @creative = @order.creatives.find(params[:creative_id])
-      @line = @creative.lines.new(line_params)
-      begin
+      @line = @creative.lines.create(line_params)
+      #begin
          if @line.save
             redirect_to new_order_creative_line_path(@order.id, @creative.id)
          else
             render :new
          end
-      rescue => e
-         logger.error "letter_controller::create => exception #{ e }"
-      end
+      #rescue => e
+      #   logger.error "letter_controller::create => exception #{ e }"
+      #end
       
    end
    
